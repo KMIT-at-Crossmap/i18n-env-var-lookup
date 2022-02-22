@@ -3,11 +3,11 @@ require 'active_support/core_ext'
 
 module I18n
   module Backend
-    module RecursiveLookup
+    module EnvVarLookup
 
-      # ${} for embedding, $${} for escaping
-      TOKENIZER                    = /(\$\$\{[^\}]+\}|\$\{[^\}]+\})/
-      INTERPOLATION_SYNTAX_PATTERN = /(\$)?(\$\{([^\}]+)\})/
+      # ~{} for embedding, ~{} for escaping
+      TOKENIZER                    = /(\~\~\{[^\}]+\}|\~\{[^\}]+\})/
+      INTERPOLATION_SYNTAX_PATTERN = /(\~)?(\~\{([^\}]+)\})/
 
       protected
 
@@ -95,7 +95,7 @@ module I18n
 
       def handle_interpolation_match(locale, embedded_token, options)
         escaped, pattern, key = embedded_token.values_at(1, 2, 3)
-        escaped ? pattern : I18n.translate(key, locale: locale)
+        escaped ? pattern : ENV.fetch(key.upcase, pattern)
       end
     end
   end
