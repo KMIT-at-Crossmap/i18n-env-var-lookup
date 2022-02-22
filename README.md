@@ -17,7 +17,7 @@ All definitions are lazily evaluated on lookup, and once compiled they're writte
 
 `<%= t '.seo_title' %>` will correctly evaluate to `Home | An International App`.
 
-Use double tilde to escape. e.g. `~~{APP_NAME}`
+Use double tildes to escape. e.g. `~~{APP_NAME}`
 
 ### Installation
 

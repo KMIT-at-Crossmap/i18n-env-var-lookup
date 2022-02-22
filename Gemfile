@@ -7,6 +7,7 @@ gem 'activesupport'
 gem 'i18n'
 
 group :development, :test do
+  gem 'rake'
   gem 'mocha'
   gem 'test-unit'
   gem 'test_declarative'
@@ -14,5 +15,4 @@ end
 
 group :development do
   gem 'byebug'
-  gem 'rake'
 end

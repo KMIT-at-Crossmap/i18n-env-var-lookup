@@ -8,3 +8,4 @@ pkg/
 spec/reports/
 .byebug_history
 discovery.cache
+*.gem
