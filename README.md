@@ -1,4 +1,4 @@
-I18n Env Var Lookup
+I18n Env Var Lookup [![Build Status](https://app.travis-ci.com/StaymanHou/i18n-env-var-lookup.svg?branch=master)](https://app.travis-ci.com/StaymanHou/i18n-env-var-lookup)
 =====================
 
 Provides a backend to the i18n gem to allow a definition to contain embedded references to environment variables by introducing the special embedded marker `~{}`.
