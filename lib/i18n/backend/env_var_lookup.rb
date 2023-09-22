@@ -47,7 +47,7 @@ module I18n
       def deep_compile(locale, subject, options)
         if subject.is_a?(Hash)
           subject.each do |key, object|
-            subject[key], _had_to_compile_result = deep_compile(locale, object, options)
+            subject[key], _had_to_compile_result = deep_compile(locale, object, options) unless subject.frozen?
           end
         else
           compile(locale, subject, options)
